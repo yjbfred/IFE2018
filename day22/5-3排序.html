@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        var arr = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+        // 将上面数组分别按从大到小以及进行排序后在console中输出
+        function fromLargeToSmall(arr) {
+            //方法1
+            // var temp;
+            // for (var i = 0; i < arr.length; i++) {
+            //     for (var j = 0; j < arr.length; j++) {
+            //         if (arr[j] < arr[j + 1]) {
+            //             temp = arr[j];
+            //             arr[j] = arr[j + 1];
+            //             arr[j + 1] = temp;
+            //         }
+            //     }
+            // }
+
+            // 方法2:sort
+            arr.sort(function (val1, val2) {
+                if (val1 > val2) {
+                    return -1;
+                } else if (val1 < val2) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            })
+            console.log(arr);
+        }
+        fromLargeToSmall(arr);
+        // 将上面数组分别按从小到大以及进行排序后在console中输出
+        function fromSmallToLarge(arr) {
+            // 方法1:
+            // var temp;
+            // for (var i = 0; i < arr.length; i++) {
+            //     for (var j = 0; j < arr.length; j++) {
+            //         if (arr[j] > arr[j + 1]) {
+            //             temp = arr[j];
+            //             arr[j] = arr[j + 1];
+            //             arr[j + 1] = temp;
+            //         }
+            //     }
+            // }
+            // 方法2:sort
+            arr.sort(function (val1, val2) {
+                if (val1 < val2) {
+                    return -1;
+                } else if (val1 > val2) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            })
+            console.log(arr);
+        }
+        fromSmallToLarge(arr);
+
+       
+        // 将下面数组分别按字母顺序a-z及z-a进行排序，在console中输出
+        var arr2 = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+        console.log('从a-z排序');
+        console.log(arr2.sort());
+        console.log('从z-a排序');
+        console.log(arr2.sort().reverse());
+
+        
+        // 将下面的二维数组，按照每个元素中第二个数从大到小的顺序进行排序输出，输出结果应该为：
+        var arr3 = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+        arr3.sort(function (val1, val2) {
+            if (val1[1] > val2[1]) {
+                return -1;
+            } else if (val1[1] < val2[1]) {
+                return 1;
+            } else {
+                return 0;
+            }
+        })
+        console.log('二维数组，按照每个元素中第二个数从大到小的顺序进行排序输出');
+        console.log(arr3);
+        // 将下面数组分别按元素对象的value值从小到大进行排序后输出
+        var arr4 = [
+            {
+                id: 1,
+                name: 'candy',
+                value: 40
+            }, {
+                id: 2,
+                name: 'Simon',
+                value: 50
+            }, {
+                id: 3,
+                name: 'Tony',
+                value: 45
+            }, {
+                id: 4,
+                name: 'Annie',
+                value: 60
+            }
+        ];
+        
+        arr4.sort(function(val1,val2){
+            if(val1.value < val2.value){
+                return -1;
+            }else if(val1.value > val2.value){
+                return 1;
+            }else {
+                return 0;
+            }
+        })
+        console.log('分别按元素对象的value值从小到大进行排序后输出');
+        console.log(arr4);
+    </script>
+</body>
+
+</html>

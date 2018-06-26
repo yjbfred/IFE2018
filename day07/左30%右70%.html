@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>利用float、position和flexbox进行布局</title>
+	<style type="text/css">
+		body,html {
+			margin: 0;
+			padding: 0;
+		}
+		/*float实现*/
+		.container {
+			width: 100%;
+			height: 200px;
+			background-color: gray;
+		}
+		.left {
+			width: 30%;
+			height: 100%;
+			background-color: red;
+			float: left;
+		}
+		.right {
+			width: 70%;
+			height: 100%;
+			background-color: blue;
+			float: left;
+		}
+		/*position实现*/
+		/*.container {
+			width: 100%;
+			height: 200px;
+			background-color: gray;
+			position: relative;
+		}
+		.left {
+			width: 30%;
+			height: 100%;
+			background-color: red;
+			position: absolute;
+			left: 0;
+		}
+		.right {
+			width: 70%;
+			height: 100%;
+			background-color: blue;
+			position: absolute;
+			/*right: 0;
+			left:30%;
+		}*/
+		/*flexbox实现*/
+		/* .container {
+			width: 100%;
+			height: 200px;
+			background-color: gray;
+			display: flex;
+		}
+		.left {
+			width: 30%;
+			height: 100%;
+			background-color: red;
+		}
+		.right {
+			width: 70%;
+			height: 100%;
+			background-color: blue;
+		}	 */
+	</style>
+</head>
+<body>
+	<h2>实现一个两栏布局，左侧占30%宽度，右侧占70%宽度</h2>
+	<div class="container">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+</body>
+</html>

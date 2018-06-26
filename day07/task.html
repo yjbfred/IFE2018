@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.clearfix:after {
+			content:"";
+			height: 0;
+			display: block;
+			clear: both;
+		}
+		html,body {
+			margin: 0;
+			padding: 0;
+		}
+		/*页头*/
+		.header {
+			width: 100%;
+			height: 50px;
+			background-color: #000;
+			color: #fff;
+			line-height: 50px;
+		}
+		.header_logo {
+			float: left;
+			margin-left: 193px;
+		}
+		.header_login {
+			float: right;
+			margin-right: 193px;
+		}
+		.header_login a:link {
+			color: #fff;
+		}
+		.header_login a:visited {
+			color: #fff;
+		}
+		.header_login a:hover {
+			color: #fff;
+		}
+		.header_login a:active {
+			color: red;
+		}
+		/*轮播图*/
+		.banner {
+			width: 100%;
+			height: 400px;
+			background-color: #32CD32;
+			position: relative;
+		}
+
+		.banner ul {
+			position: absolute;
+			right: 193px;
+			bottom: 10px;
+			list-style: none;
+		}
+		.banner li {
+			/*如果该元素是块级元素，并设置浮动，vertical-align: bottom;是无效的*/
+			/*设置为行内块元素,给vertical-align: bottom;可以让元素底部对齐的*/
+			display: inline-block;
+			margin-left: 10px;
+			border:1px solid gray;
+			width: 20px;
+			height: 25px;
+			text-align: center;
+			vertical-align: bottom;
+		}
+		.banner .change {
+			height: 40px;
+			line-height: 50px;
+			border:1px solid black;
+		}
+		/*导航*/
+		.nav {
+			width: 100%;
+			height: 45px;
+			border-bottom: 1px solid #D9D9D9;
+			position: relative;
+		}
+		.nav ul {
+			margin-bottom: 0;
+			list-style: none;
+			margin-left: 193px;
+			position: absolute;
+			bottom: -1px;
+			padding: 0;
+		}
+		.nav li {
+			float: left;
+			width: 80px;
+			height: 30px;
+			border-top:1px solid #D9D9D9;
+			border-left:1px solid #D9D9D9;
+			border-right:1px solid #D9D9D9;
+			border-top-left-radius: 15px;
+			border-top-right-radius: 15px;
+			text-align: center;
+			line-height: 30px;
+		}
+		.nav .home {
+			border-bottom: 1px solid white;	
+			margin-left: 0;
+		}
+		.nav .pro {
+			background-color: #CFCFCF;
+		}
+
+		/*主体*/
+		.main {
+			width: 960px;
+			margin:0 auto;
+		}
+		.main ul {
+			list-style: none;
+			display: inline-flex;
+			width: 100%;
+			margin:0;
+			padding: 0;
+		}
+		.main li {
+			padding: 80px;
+			flex: 1;
+			border:1px solid #D9D9D9;
+			margin:8px 8px 0px 0px;
+			text-align: center;
+		}
+		.main ul:last-of-type {
+			margin-bottom: 16px;
+		}
+		/*页脚*/
+		.footer {
+			width: 100%;
+			height: 100px;
+			background-color: #8B8878;
+			text-align: center;
+		}
+		.footer a {
+			display: inline-block;
+			margin-top: 10px;
+			text-decoration: none;
+		}
+		.footer a:visited {
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<!-- 页眉 -->
+	<div class="header clearfix">
+		<div class="header_logo">Logo</div>
+		<div class="header_login">
+			<a href="http://www.runoob.com">GitHub</a>
+			<a href="#">Regisgter</a>
+			<a href="#">Login</a>
+		</div>
+	</div>
+	<!-- 轮播 -->
+	<div class="banner">
+		<ul>
+			<li>1</li>
+			<li class="change">2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+	<!-- 导航 -->
+	<div class="nav">
+		<ul class="clearfix">
+			<li class="home">HOME</li>
+			<li class="pro">PROFILE</li>
+			<li class="pro">ABOUT</li>
+		</ul>
+	</div>
+	<!-- 页面主体 -->
+	<div class="main">
+		<ul>
+			<li>content 1</li>
+			<li>content 2</li>
+			<li>content 3</li>
+		</ul>
+		<ul>
+			<li>content 4</li>
+			<li>content 5</li>
+			<li>content 6</li>
+			<li>content 7</li>
+		</ul>
+		<ul>
+			<li>content 8</li>
+			<li>content 9</li>
+			<li>content 10</li>
+		</ul>
+	</div>
+	<!-- 页脚 -->
+	<div class="footer">
+		<a href="#">2018 ife.baidu.com</a>
+	</div>
+</body>
+</html>

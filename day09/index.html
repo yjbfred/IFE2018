@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .clearfix::after {
+            content: ".";
+            clear: both;
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            height: 0;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        /* 页眉 */
+
+        .header {
+            position: relative;
+        }
+
+        .header-detail {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+
+        .header-detail .title {
+            color: white;
+            font-size: 50px;
+            font-family: "microsoft yahei", "Times New Roman", "宋体", Times, serif;
+            font-weight: 100;
+            margin-top: 208px;
+
+        }
+
+        .header-detail .text {
+            color: #b2b0ab;
+            font-size: 20px;
+            margin: 0 20%;
+            line-height: 34px;
+            margin-top: 80px;
+            margin-bottom: 100px;
+        }
+
+        .header-detail .modal {
+            height: 250px;
+            border: 1px solid #554d4d;
+            margin: 0 15%;
+            border-radius: 5px;
+        }
+
+        .header-detail .modal .modal-box1 {
+            margin-top: 60px;
+
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 3px;
+        }
+
+        .header-detail .modal .modal-box2 {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #736f5f;
+            letter-spacing: 2px;
+        }
+
+        .header-detail .modal .modal-box3 {
+            margin-top: 45px;
+
+        }
+
+        .header-detail .modal .modal-box3 input {
+            vertical-align: top;
+            border-radius: 5px;
+            margin-right: 30px;
+        }
+
+        .header-detail .modal .modal-box3 input[type="text"] {
+            width: 292px;
+            height: 50px;
+            border: 1px solid #554d4d;
+            color: #fffff9;
+            background-color: rgba(255, 255, 255, 0.01);
+            text-indent: 25px;
+            font-size: 16px;
+        }
+
+        .header-detail .modal .modal-box3 input:nth-child(2) {
+            color: #736f5f;
+        }
+
+        .header-detail .modal .modal-box3 input[type="submit"] {
+            width: 126px;
+            height: 52px;
+            color: #000000;
+            text-align: center;
+            background-color: white;
+            border: 1px solid #554d4d;
+            letter-spacing: 1px;
+        }
+
+        .article1 {
+            width: 100%;
+            padding-bottom: 120px;
+            /* text-align: center; */
+        }
+
+        .article1-intro {
+            letter-spacing: 1px;
+            padding-top: 90px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .article1-title {
+            width: 620px;
+            font-size: 32px;
+            margin: 40px auto 84px;
+            text-align: center;
+        }
+
+        .article1-modal {
+            width: 1030px;
+            margin: 0 auto;
+            display: flex;
+            /* flex-direction: column;决定主轴的排列方向 */
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .article1-modal-module {
+            width: 45%;
+            position: relative;
+            margin-bottom: 82px;
+        }
+
+        .article1-modal-module img {
+            margin-top: 5px;
+        }
+
+        .article1-modal-module h3 {
+            margin-bottom: 18px;
+        }
+
+        .article1-modal-module p {
+            color: #7d7d7d;
+        }
+
+        .article1-modal-Mobile,
+        .article1-modal-access img {
+            margin-left: 3px;
+        }
+
+        .article1-modal-module-texttop {
+            position: absolute;
+            top: 0;
+            left: 73px;
+        }
+
+        .article1-modal-module-textbottom {
+            position: absolute;
+            top: 0;
+            left: 76px;
+        }
+
+        .article1-modal-Mobile {
+            margin-right: 5%;
+        }
+
+        .article1-modal-fluid {
+            margin-right: 5%;
+        }
+
+        .article2 {
+            width: 1600px;
+            height: 800px;
+            position: relative;
+        }
+
+        .article2 img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        .article2-smartcar {
+            margin-left: 310px;
+        }
+
+        .article2-smartcar-title {
+            width: 310px;
+            padding-top: 180px;
+            font-size: 32px;
+            color: #fff;
+        }
+
+        .article2-smartcar-text {
+            width: 312px;
+            padding-top: 40px;
+            font-size: 14px;
+            color: #acafaa;
+            line-height: 28px;
+        }
+
+        .article2-smartcar-button {
+            padding-top: 50px;
+        }
+
+        .article2-smartcar-button input {
+            height: 62px;
+            width: 240px;
+            background-color: #fff;
+            border: none;
+        }
+
+        .article2-smartcar-button input:last-child {
+            height: 62px;
+            width: 240px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid #acafaa;
+            color: #fff;
+        }
+
+        .article2-iphone {
+            width: 646px;
+            height: 598px;
+            border-top: 1px solid #acafaa;
+            border-left: 1px solid #acafaa;
+            border-bottom: 1px solid #acafaa;
+            position: absolute;
+            top: 100px;
+            right: 0px;
+            border-top-left-radius: 40px;
+            border-bottom-left-radius: 40px;
+        }
+
+        .article2-iphone-fillet {
+            border: 1px solid #acafaa;
+            height: 9px;
+            width: 9px;
+            border-radius: 10px;
+            margin-left: 31px;
+            position: absolute;
+            top: 295px;
+        }
+
+        .article2-iphone-detail {
+            height: 542px;
+            width: 586px;
+            background-color: #fff;
+            position: absolute;
+            top: 29px;
+            left: 60px;
+        }
+
+        .article2-iphone-detail>h3 {
+            margin-top: 72px;
+            margin-left: 426px;
+            font-size: 26px;
+        }
+
+        .article2-iphone-detail>p {
+            margin-top: 20px;
+            margin-left: 250px;
+            font-size: 16px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .article2-iphone-detail-bigbox {
+            overflow: hidden;
+        }
+
+        .article2-iphone-detail-bigbox-module {
+            width: 177px;
+            height: 250px;
+            margin-top: 72px;
+            float: left;
+        }
+
+        .article2-iphone-detail-bigbox-module h3 {
+            margin-top: 23px;
+            margin-left: 14px;
+            font-size: 16px;
+        }
+
+        .article2-iphone-detail-bigbox-module p {
+            margin-top: 16px;
+            margin-left: 14px;
+            margin-right: 20px;
+            font-size: 10px;
+            color: #acafaa;
+        }
+
+        .article2-iphone-detail-bigbox-course {
+            margin-left: 58px;
+        }
+
+        .article2-iphone-detail-bigbox-course-top {
+            width: 100%;
+            height: 136px;
+            background-color: #773fc1;
+        }
+
+        .article2-iphone-detail-bigbox-guide {
+            margin-left: 26px;
+        }
+
+        .article2-iphone-detail-bigbox-guide-top {
+            width: 100%;
+            height: 136px;
+
+            background-color: #17c5cb;
+        }
+
+        .article2-iphone-detail-bigbox-sample {
+            width: 122px;
+            height: 250px;
+            margin-left: 26px;
+
+        }
+
+        .article2-iphone-detail-bigbox-sample-top {
+            width: 100%;
+            height: 136px;
+            background-color: #2da3f8;
+        }
+
+        .article2-iphone-detail-bigbox-module-module {
+            position: relative;
+        }
+
+        .article2-iphone-detail-bigbox-module-module div {
+            height: 40px;
+            width: 40px;
+            border: 1px solid #acafaa;
+            border-radius: 20px;
+            position: absolute;
+            top: 47px;
+            left: 67px;
+        }
+
+        .section {
+            width: 1600px;
+            height: 580px;
+            text-align: center;
+            border-bottom: 1px solid #e7e7e7;
+        }
+
+        .section-title {
+            font-size: 34px;
+            margin-top: 100px;
+        }
+
+        .section-modules {
+            margin-top: 93px;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .section-modules-module {
+            width: 265px;
+            margin-left: 20px;
+        }
+
+        .section-modules-module p {
+            margin-top: 35px;
+            color: #acafaa;
+        }
+
+        /* figure */
+
+        .figure {
+            width: 1600px;
+            height: 1000px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid #e7e7e7;
+        }
+
+        .figure-box {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .figure-top {
+            display: flex;
+            margin-bottom: 80px;
+        }
+
+        .figure-top-intro {
+            width: 310px;
+            margin-left: 80px;
+        }
+
+        .figure-top-intro h3 {
+            text-align: left;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 38px;
+        }
+
+        .figure-top-intro p {
+            text-align: left;
+            font-size: 16px;
+            line-height: 30px;
+            color: #acafaa;
+        }
+
+        .figure-bottom {
+            display: flex;
+        }
+
+        .figure-bottom-intro {
+            width: 310px;
+            margin-right: 80px;
+        }
+
+        .figure-bottom-intro h3 {
+            text-align: left;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 38px;
+        }
+
+        .figure-bottom-intro p {
+            text-align: left;
+            font-size: 16px;
+            line-height: 30px;
+            color: #acafaa;
+        }
+
+        /* person */
+
+        .person {
+            width: 1600px;
+            text-align: center;
+            border-bottom: 1px solid #e7e7e7;
+        }
+
+        .person-container {
+            margin: 100px auto;
+            /*这里的设置是为了上下边距相等*/
+            /* 当块状元素定宽，设置margin:0 auto才有效*/
+            /* 当元素不定宽，给元素设置为行内或行内块元素，父元素设置text-align:center有效 */
+            display: inline-block;
+        }
+
+        .person-title {
+            font-size: 34px;
+        }
+
+        .person-text {
+            font-size: 20px;
+            color: #acafaa;
+            margin-top: 36px;
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .person-show {
+            width: 1000px;
+            margin-top: 64px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .person-show img {
+            margin-right: 25px;
+            margin-bottom: 25px;
+        }
+
+        /*section2 */
+
+        .section2 {
+            width: 1600px;
+            text-align: center;
+        }
+
+        .section2-main {
+            display: inline-block;
+            margin: 70px auto;
+        }
+
+        .section2-main-message {
+            float: left;
+            width: 470px;
+            height: 560px;
+            border: 1px solid #e7e7e7;
+            border-radius: 10px;
+            margin-right: 130px;
+        }
+
+        .section2-main-message p {
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .section2-main-message input {
+            display: block;
+
+        }
+
+        .section2-main-message input[type="text"] {
+            width: 368px;
+            height: 48px;
+            border: 1px solid #e7e7e7;
+            text-indent: 20px;
+            margin: 50px auto;
+            border-radius: 2px;
+            color: #898989;
+        }
+
+        .section2-main-message input[type="button"] {
+            width: 370px;
+            height: 50px;
+            border: none;
+            text-indent: 20px;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 2px;
+            color: #fff;
+            background-color: #000000;
+        }
+
+        .section2-main-contact {
+            float: left;
+            width: 360px;
+            height: 560px;
+            text-align: left;
+            color: #141414;
+            margin-top: 80px;
+        }
+
+        .section2-main-contact h6 {
+            font-size: 33px;
+            font-weight: 400;
+            /* margin-top: 8px; */
+            margin-bottom: 40px;
+        }
+
+        .section2-main-contact p {
+            margin-bottom: 75px;
+            font-size: 17px;
+            color: #898989;
+        }
+
+        .section2-contact-address {
+            height: 48px;
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .section2-contact-address img {
+            position: absolute;
+            top: 8px;
+        }
+
+        .section2-contact-address span {
+            position: absolute;
+            left: 42px;
+        }
+
+        .section2-main-contact-module {
+            height: 30px;
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .section2-main-contact-module img {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .section2-main-contact-module span {
+            position: absolute;
+            left: 42px;
+            top: 5px;
+        }
+
+        .footer {
+            width: 1600px;
+            height: 412px;
+            background-color: #141414;
+            text-align: center;
+            color: #5b5b5b;
+        }
+
+        .footer-container {
+            display: inline-block;
+        }
+
+        .footer-container dl {
+            float: left;
+            width: 300px;
+            margin-top: 90px;
+            line-height: 50px;
+            text-align: left;
+        }
+
+        .footer-container dl dt {
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        .footer-container-enjoy-creat {
+            line-height: 25px;
+        }
+
+        .footer-container-enjoy ul {
+            list-style: none;
+            margin-top: 30px;
+
+        }
+
+        .footer-container-enjoy ul li {
+            float: left;
+            margin-right: 27px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <img src="images/前端学院设计图_01.png" alt="">
+        <div class="header-detail">
+            <div class="title">
+                Hello World
+            </div>
+            <div class="text">
+                China is speeding up strategic plan. standards, traffic rules. laws and regulations on accident-incurred liabilities for
+                its smart car industry. Economic Information Daily reported Thursday.
+            </div>
+            <div class="modal">
+                <div class="modal-box1">CREATE YOUR ACCOUNT</div>
+                <div class="modal-box2">IT IS ABSOLUTELY FREE</div>
+                <div class="modal-box3">
+                    <form action="">
+                        <input type="text" value="18335717584@163.com">
+                        <input type="text" value="Create your password">
+                        <input type="submit" value="SIGN UP">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="article1">
+        <div class="article1-intro">BOATLOADS OF AWESOME</div>
+        <div class="article1-title">Ready-made, customizable, HTML landing page sections</div>
+        <div class="article1-modal">
+            <div class="article1-modal-Mobile article1-modal-module">
+                <img src="images/切片_03.png">
+                <div class="article1-modal-module-texttop">
+                    <h3>Mobile First</h3>
+                    <p>All modulz are built mobile-first for maximum device compatibility.</p>
+                </div>
+            </div>
+            <div class="article1-modal-access article1-modal-module">
+                <img src="images/切片_05.png">
+                <div class="article1-modal-module-texttop">
+                    <h3>Mobile First</h3>
+                    <p>All modulz are built mobile-first for maximum device compatibility.</p>
+                </div>
+            </div>
+            <div class="article1-modal-fluid article1-modal-module">
+                <img src="images/切片_10.png">
+                <div class="article1-modal-module-textbottom">
+                    <h3>Mobile First</h3>
+                    <p>All modulz are built mobile-first for maximum device compatibility.</p>
+                </div>
+            </div>
+            <div class="article1-modal-custom article1-modal-module">
+                <img src="images/切片_12.png">
+                <div class="article1-modal-module-textbottom">
+                    <h3>Mobile First</h3>
+                    <p>All modulz are built mobile-first for maximum device compatibility.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="article2">
+        <img src="images/前端学院设计图_03.png">
+        <div class="article2-smartcar">
+            <div class="article2-smartcar-title">Supportive policies for China's smart car</div>
+            <div class="article2-smartcar-text">China will come up with its own smart car standards,traffic rules,laws and regulations relating to safety. according
+                to the China Industry Innovation Alliance for the Intelli-gent and Connected Vehicles.</div>
+            <div class="article2-smartcar-button">
+                <input type="button" value="CHECK OUT FEATURES">
+                <input type="button" value="TRY PRODUCT FOR FREE">
+            </div>
+        </div>
+        <div class="article2-iphone">
+            <div class="article2-iphone-fillet"></div>
+            <div class="article2-iphone-detail">
+                <h3>资料</h3>
+                <p>这里有一些教程、文档或示例，可以帮助你学习和</p>
+                <div class="article2-iphone-detail-bigbox">
+                    <div class="article2-iphone-detail-bigbox-module article2-iphone-detail-bigbox-course">
+                        <div class="article2-iphone-detail-bigbox-course-top article2-iphone-detail-bigbox-module-module">
+                            <div></div>
+                        </div>
+                        <h3>教程</h3>
+                        <p>教程是入门的捷径，请从这里开始了解SAN。</p>
+                    </div>
+                    <div class="article2-iphone-detail-bigbox-module article2-iphone-detail-bigbox-guide">
+                        <div class="article2-iphone-detail-bigbox-guide-top article2-iphone-detail-bigbox-module-module">
+                            <div></div>
+                        </div>
+                        <h3>指南</h3>
+                        <p>我们正在编写指南手册，以指导各个应用场景下怎么使用San。</p>
+                    </div>
+                    <div class="article2-iphone-detail-bigbox-module article2-iphone-detail-bigbox-sample">
+                        <div class="article2-iphone-detail-bigbox-sample-top article2-iphone-detail-bigbox-module-module">
+                            <div></div>
+                        </div>
+                        <h3>示例</h3>
+                        <p>这里展示了一些简单例子，实际项目如何运用。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-title">
+            Try Our Awesome Products
+        </div>
+        <div class="section-modules">
+            <div class="section-modules-left section-modules-module">
+                <img src="images/切片_17.png">
+                <p>Li Jun,a China Academy of Engi-neering academician and also director of the alliance's experts'committee.said
+                    that China will also launch design guidance for smart cars smart map architec-ture and standards for
+                    test grounds.</p>
+            </div>
+            <div class="section-modules-center section-modules-module">
+                <img src="images/切片_20.png">
+                <p>Li Jun,a China Academy of Engi-neering academician and also director of the alliance's experts'committee.said
+                    that China will also launch design guidance for smart cars smart map architec-ture and standards for
+                    test grounds.</p>
+            </div>
+            <div class="section-modules-right section-modules-module">
+                <img src="images/切片_23.png">
+                <p>Li Jun,a China Academy of Engi-neering academician and also director of the alliance's experts'committee.said
+                    that China will also launch design guidance for smart cars smart map architec-ture and standards for
+                    test grounds.</p>
+            </div>
+        </div>
+    </div>
+    <div class="figure">
+        <div class="figure-box">
+            <div class="figure-top">
+                <img src="images/前端学院设计图_07.png" alt="">
+                <div class="figure-top-intro">
+                    <h3>Learn How to Improve Your Personal Business</h3>
+                    <p>Li Jun, a China Academy of Engi-neering academician and also director of the alliance's experts'committee.
+                        said that China will also launch design guidance for smart cars smart map architec-ture and standards
+                        for test grounds.</p>
+                </div>
+            </div>
+            <div class="figure-bottom">
+                <div class="figure-bottom-intro">
+                    <h3>Learn How to Improve Your Personal Business</h3>
+                    <p>Li Jun, a China Academy of Engi-neering academician and also director of the alliance's experts'committee.
+                        said that China will also launch design guidance for smart cars smart map architec-ture and standards
+                        for test grounds.</p>
+                </div>
+                <img src="images/前端学院设计图_11.png" alt="">
+
+            </div>
+        </div>
+    </div>
+    <div class="person">
+        <div class="person-container">
+            <div class="person-title">
+                Our Awesome Crew
+            </div>
+            <div class="person-text">
+                Our unique online teaching style makes learning easy for everyone. Whether you are trying to land a new job, brush up on
+                your skills.
+            </div>
+            <div class="person-show">
+
+                <img src="images/前端学院设计图_18.png" style="width: 460px;height: 354px">
+
+
+                <img src="images/前端学院设计图_15.png" style="width: 460px;height: 354px">
+
+
+                <img src="images/前端学院设计图_06.png" style="width: 460px;height: 354px">
+
+
+                <img src="images/前端学院设计图_22.png" style="width: 460px;height: 354px">
+
+            </div>
+        </div>
+    </div>
+    <div class="section2">
+        <div class="section2-main">
+            <div class="section2-main-message">
+                <p>FELL FREE TO WRITE US</p>
+                <form action="">
+                    <input type="text" value="E-mail">
+                    <input type="text" value="Subject">
+                    <input type="text" value="Message">
+                    <input type="button" value="SEND">
+                </form>
+            </div>
+
+            <div class="section2-main-contact">
+                <h6>Contacts</h6>
+                <p>Make any design your own using the Style Editor. Personalize fonts. colors, and layouts to create the custom
+                    look you want.</p>
+                <div class="section2-contact-address ">
+                    <img src="images/切片_36.png" alt="">
+                    <span>360 King Street
+                        <br/> Feastrvale Trevose,PA 19057</span>
+                </div>
+                <div class="section2-main-contact-call section2-main-contact-module">
+                    <img src="images/切片_40.png" alt="">
+                    <span>(755)564-84-12</span>
+                </div>
+                <div class="section2-main-contact-email section2-main-contact-module">
+                    <img src="images/切片_43.png" alt="">
+                    <span>youname@mail.com</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <dl>
+                <dt>LEARN MORE</dt>
+                <dd>How it works?</dd>
+                <dd>Meeting tools</dd>
+                <dd>Live streaming</dd>
+                <dd>Contact method</dd>
+            </dl>
+            <dl>
+                <dt>ABOUT US</dt>
+                <dd>About us</dd>
+                <dd>Features</dd>
+                <dd>Privacy police</dd>
+                <dd>Terms & Conditions</dd>
+            </dl>
+            <dl>
+                <dt>SUPPORT</dt>
+                <dd>FAQ</dd>
+                <dd>Contact us</dd>
+                <dd>Live chat</dd>
+                <dd>Phone call</dd>
+            </dl>
+            <dl class="footer-container-enjoy">
+                <dt>ENJOY YOUR LIFE</dt>
+                <dd class="footer-container-enjoy-creat">Creat web UI Kit for designers.</dd>
+                <dd class="footer-container-enjoy-creat">freelancers or business.</dd>
+                <dd>
+                    <ul>
+                        <li>
+                            <img src="images/切片_46.png" alt="">
+                        </li>
+                        <li>
+                            <img src="images/切片_48.png" alt="">
+                        </li>
+                        <li>
+                            <img src="images/切片_50.png" alt="">
+                        </li>
+                        <li>
+                            <img src="images/切片_53.png" alt="">
+                        </li>
+                        <li>
+                            <img src="images/切片_56.png" alt="">
+                        </li>
+                        <li>
+                            <img src="images/切片_59.png" alt="">
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+
+    </div>
+</body>
+
+</html>

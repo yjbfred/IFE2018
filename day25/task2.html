@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body onload="startTime()">
+    <script>
+        function startTime() {
+            var d = new Date();
+            var day = d.getDay();
+            var month = d.getMonth() + 1;
+            var date = d.getDate();
+            var hours = d.getHours();
+            var minutes = d.getMinutes();
+            var seconds = d.getSeconds();
+            month = checkTime(month);
+            date = checkTime(date);
+            var txt = document.getElementById('txt');
+            txt.innerHTML = d.getFullYear() + '年' + month + '月' + date
+                + '日' + ' ' + '星期' + setDay(day) + ' ' + checkTime(hours)
+                + ':' + checkTime(minutes) + ':' + checkTime(seconds);
+            //格式化星期 
+            function setDay(day) {
+                switch (day) {
+                    case 0:
+                        day = '日';
+                        break;
+                    case 1:
+                        day = '一';
+                        break;
+                    case 2:
+                        day = '二';
+                        break;
+                    case 3:
+                        day = '三';
+                        break;
+                    case 4:
+                        day = '四';
+                        break;
+                    case 5:
+                        day = '五';
+                        break;
+                    case 6:
+                        day = '六';
+                        break;
+                }
+                return day;
+            }
+            setTimeout('startTime()', 500);
+        }
+
+
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i }
+            return i
+        }
+    </script>
+    <div id="txt"></div>
+</body>
+
+</html>

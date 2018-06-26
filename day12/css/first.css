@@ -1,0 +1,47 @@
+/* 最左列 */
+
+.first_column {
+    width: 100px;
+    position: relative;
+    background-color: #1d2531;
+}
+
+.first_column_top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.first_column_top_alike {
+    width: 62px;
+    height: 62px;
+    border-radius: 31px;
+    margin: 20px auto 0px;
+    position: relative;
+}
+
+.first_column_top_alike img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.first_column_bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items:center;
+}
+
+.first_column_bottom img {
+    width: 18px;
+    height: 18px;
+}
+.first_column_bottom img:first-child {
+    margin-top: 5px;
+    margin-right: 10px;
+}

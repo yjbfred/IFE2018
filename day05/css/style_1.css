@@ -1,0 +1,27 @@
+
+ul {
+	list-style:none;
+	/*问题：内容增多溢出隐藏*/
+	/*overflow: hidden;
+	zoom:1;*/
+
+}
+/*清除浮动的最好方法，利用伪元素*/
+.clearfix:after {
+	content:"";
+	height: 0;
+	display: block;
+	clear: both;
+}
+ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+ul li {
+	float: left;
+	margin-right: 50px;
+}
+dd {
+	margin-left: 0;
+	padding-left: 0;
+}

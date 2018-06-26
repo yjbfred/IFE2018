@@ -1,0 +1,43 @@
+
+ul {
+	list-style:none;
+}
+/*清除浮动的最好方法，利用伪元素*/
+.clearfix:after {
+	content:"";
+	height: 0;
+	display: block;
+	clear: both;
+}
+ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+ul li {
+	float: left;
+	margin-right: 50px;
+}
+dd {
+	margin-left: 0;
+	padding-left: 0;
+}
+.container {
+	width: 90%;
+	max-width: 900px;
+	margin: 0 auto;
+	background-color: #836FFF;
+}
+.box-left {
+	width: 25%;
+	float: left;
+}
+h1 {
+	text-align: center;
+}
+.box-right {
+	width: 75%;
+	float: left;
+	box-sizing: border-box;
+	padding-left: 50px;
+	background-color: #fff;
+}

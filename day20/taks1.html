@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="name" type="text">
+    <button id="submit-btn">Submit</button>
+    <script>    
+        // 需求1:当点击按钮submit-btn时，在console中输出name中的内容
+        var submitBtn = document.getElementById('submit-btn');
+        submitBtn.onclick = function(){
+            console.log( document.getElementById('name').value);
+        }
+        // 需求2:在输入过程中，如果按回车键，则同样执行上一条的需求
+        var name1 = document.getElementById('name');
+        name1.onkeypress= function(event) {
+            if(event.keyCode === 13 || event.which === 13) {
+                console.log(this.value);
+            }
+        }
+        // 在输入过程中，如果按 ESC 键，则把输入框中的内容清空
+        name1.onkeydown = function(event) {
+            if(event.keyCode === 27 || event.which === 27) {
+                this.value = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

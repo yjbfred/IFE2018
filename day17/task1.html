@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        // 第一步 获取要操作dom元素
+        var num1 = document.getElementById('first-number');
+        var num2 = document.getElementById('second-number');
+        var addBtn = document.getElementById('add-btn');
+        var minusBtn = document.getElementById('minus-btn');
+        var timesBtn = document.getElementById('times-btn');
+        var divideBtn = document.getElementById('divide-btn');
+        var result = document.getElementById('result');
+        var a = 'sad';
+        console.log(a);
+        // 第二步 给加减乘除按钮添加事件
+        // 加
+        addBtn.onclick = function(){
+            if(num1.value == Number(num1.value) && num2.value == Number(num2.value)) {
+                result.innerHTML = Number(num1.value) + Number(num2.value);
+            }else {
+                console.log('输入错误,请重新输入');
+            }
+        }
+        // 减
+        minusBtn.onclick = function(){
+            if(num1.value == Number(num1.value) && num2.value == Number(num2.value)) {
+                result.innerHTML = Number(num1.value) - Number(num2.value);
+            }else {
+                console.log('输入错误,请重新输入');
+            }
+        }
+        // 乘
+        timesBtn.onclick = function(){
+            if(num1.value == Number(num1.value) && num2.value == Number(num2.value)) {
+                result.innerHTML = Number(num1.value) - Number(num2.value);
+            }else {
+                console.log('输入错误,请重新输入');
+            }
+        }
+        // 除
+        divideBtn.onclick = function(){
+            if(num1.value != 0 && num1.value == Number(num1.value) && num2.value == Number(num2.value)) {
+                result.innerHTML = Number(num1.value) - Number(num2.value);
+            }else {
+                result.innerHTML = '输入错误,请重新输入';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+    <style>
+        #fade-obj {
+            width: 300px;
+            height: 300px;
+            background: #000;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fade-obj"></div>
+    <button id="fade-btn">淡出</button>
+    <script>
+        // 需求1:点击按钮时，开始改变 fade-obj 的透明度，开始一个淡出（逐渐消失）动画，直到透明度为0
+        // 需求2:在动画过程中，按钮的状态变为不可点击
+        // 需求3:在动画结束后，按钮状态恢复，且文字变成“淡入”
+        // 需求4:在 按钮显示 淡入 的状态时，点击按钮，开始一个“淡入”（逐渐出现）的动画，和上面类似按钮不可点，直到透明度完全不透明
+        // 需求5:淡入动画结束后，按钮文字变为“淡出”
+        var fadeObj = document.getElementById('fade-obj');
+        var fadeBtn = document.getElementById('fade-btn');
+        var flag = true;
+        fadeBtn.onclick = function () {
+            if (fadeBtn.innerHTML === '淡出') {
+                fadeOut();
+            } else {
+                fadeIn();
+            }
+        }
+        function fadeOut() {
+            var num = 10;
+            var timer = setInterval(function () {
+                num--;
+                fadeObj.style.opacity = num / 10;
+                if (num > 0) {
+                    fadeBtn.disabled = true;
+                } else if (num <= 0) {
+                    clearInterval(timer);
+                    fadeBtn.disabled = false;
+                    fadeBtn.innerHTML = '淡入';
+                }
+            }, 100);
+        }
+        function fadeIn() {
+            var num = 0;
+            var timer = setInterval(function () {
+                num++;
+                fadeObj.style.opacity = num / 10;
+                if (num < 10) {
+                    fadeBtn.disabled = true;
+                } else if (num >= 10) {
+                    clearInterval(timer);
+                    fadeBtn.disabled = false;
+                    fadeBtn.innerHTML = '淡出';
+                }
+            }, 100);
+        }
+    </script>
+</body>
+
+</html>

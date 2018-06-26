@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动帧动画</title>
+    <style>
+        #animate {
+            width: 480px;
+            height: 480px;
+        }
+    </style>
+</head>
+
+<body onload="load()">
+    <div id="animate"></div>
+    <script>
+        var animate = document.getElementById('animate');
+        var imgUrl = 'erik.jpg';
+        var num = 0;
+        function load() {
+            animate.style.backgroundImage = 'url(' + imgUrl + ')';
+            animate.style.backgroundRepeat = 'no-repeat';
+            var timer = setInterval(function () {
+                // 无缝滚动帧动画的核心原理所在
+                if (num == 16) {
+                    num = 0;
+                }
+                num++;
+                animate.style.backgroundPositonX = 0 * num;
+                animate.style.backgroundPositionY = -480 * num + 'px';
+                if (parseInt(animate.style.backgroundPositionY) >= 8160) {
+                    clearInterval(timer);
+                }
+            }, 200)
+
+        }
+    </script>
+</body>
+</html>
