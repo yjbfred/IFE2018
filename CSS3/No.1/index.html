@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .container {
+        width: 500px;
+        height: 500px;
+        text-align: center;
+    }
+
+    #ele {
+        box-sizing: border-box;
+        width: 100px;
+        font-size: 24px;
+        transition: all 2s;
+        transition: color 2s;
+        color: #000;
+        margin:0 auto;
+    }
+
+    #btn {
+        border: 1px solid #333;
+        background-color: #fff;
+        width: 100px;
+        height: 30px;
+        border-radius: 8px;
+        outline: none;
+        margin-top: 20px;
+    }
+
+    #line {
+        margin-top: 10px;
+        width: 0px;
+        height: 10px;
+        margin: 0 auto;
+        background-color: red;
+        transition: width 2s;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="ele">前端学院</div>
+        <div id="line"></div>
+        <button id="btn">切换样式</button>
+    </div>
+    <script>
+    	var flag = true;
+    document.getElementById('btn').onclick = function() {
+        if (flag) {
+            document.getElementById('ele').style.color = 'red';
+            document.getElementById('line').style.width = '100px';
+            flag = false;
+        } else {
+            document.getElementById('ele').style.color = '#000';
+            document.getElementById('line').style.width = '0px';
+            flag = true;
+        }
+
+    }
+    </script>
+</body>
+
+</html>
